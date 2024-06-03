@@ -4,9 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <CurrentTime />
-      </div>
+      <CurrentTime updateIntervalInSeconds={3}/>
+      <CurrentTime updateIntervalInSeconds={5}/>
     </div>
   );
 }
