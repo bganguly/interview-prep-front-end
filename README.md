@@ -1,4 +1,4 @@
 ## interview-prep-front-end
 
-This repo contains miscellaneous react quizzes 
+This repo contains miscellaneous front-end quizzes 
 
