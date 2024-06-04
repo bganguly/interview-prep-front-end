@@ -39,4 +39,4 @@ const outputArrayMin2 = Math.min.call(null,...inputArray)
 const outputArrayMin3 = Math.min(...inputArray)
 // below will return NaN
 const outputArrayMin4 = Math.min(inputArray)
-console.log('using Min :', outputArrayMin1, outputArrayMin2, outputArrayMin2, outputArrayMin4)
+console.log('using Min :', outputArrayMin1, outputArrayMin2, outputArrayMin3, outputArrayMin4)
