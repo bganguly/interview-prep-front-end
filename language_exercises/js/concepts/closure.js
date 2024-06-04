@@ -11,6 +11,7 @@ console.log(result()) //1
 console.log(result()) //2
 
 // demo that same function when called multiple times
+// with different valus, 'remembers' last result and
 // returns different values
 var closure = function (incrementVal) {
   return function(input) {
@@ -21,28 +22,35 @@ var result = closure(6);
 console.log(result(10)) //16
 console.log(result(11)) //17
 
+// the two settimeout demos below will interleave as no promises or callbacks are in use
 // demo how to use settimeout to return
 // different values - incorrect demo
+var loopCounter = 3;
 var closureWithSetttimeoutIncorrect = function() {
-  for (var i = 0; i < 3; i++) {
-    setTimeout(function() { console.log(i); }, 500 + i);
+  for (var i = 0; i < loopCounter; i++) {
+    setTimeout(function() { 
+      console.log('closureWithSetttimeoutIncorrect', i);
+    }  , 500 + i);
   }
 }
 closureWithSetttimeoutIncorrect();
 
 // demo how to use settimeout to return
-// different values - correct demo
+// different values - correct demo 
 var closureWithSetttimeoutCorrect = function() {
-  for (var i = 0; i < 3; i++) {
-      setTimeout(
-        function(i) { 
-          return function() {console.log(i)}; 
-        }(i)
-        , 500 + i);
+  for (var i = 0; i < loopCounter; i++) {
+      setTimeout(function(i) { 
+          return function() {console.log('closureWithSetttimeoutCorrect',i)}; 
+      }(i), 500 + i);
   }
 }
 closureWithSetttimeoutCorrect();
 
+// CAUTION: these need to be run in chrome dev console or similar. 
+// Node runtime wont find `document`` (if run from vscode)
+if (typeof document === 'undefined') {
+  return
+}
 // demo how to use closure to correctly bind
 // right dom elements
 var closureWithDomElements = function() {
