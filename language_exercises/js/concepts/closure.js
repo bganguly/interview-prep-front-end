@@ -71,7 +71,6 @@ var closureWithDomElements = function() {
   var elements = document.getElementsByTagName('pre');
   for (let i = 0; i < elements.length; i++) {
       elements[i].addEventListener('click', function() {
-        console.log(elements[i].innerHTML)
         return function() {console.log(elements[i].innerHTML)}
       })
   }
