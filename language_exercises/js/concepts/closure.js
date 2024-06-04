@@ -66,12 +66,38 @@ closureWithDomElements();
 
 // demo how to use closure to correctly bind
 // right dom elements using let
+// this does not appear to work
 var closureWithDomElements = function() {
   var elements = document.getElementsByTagName('pre');
   for (let i = 0; i < elements.length; i++) {
       elements[i].addEventListener('click', function() {
+        console.log(elements[i].innerHTML)
         return function() {console.log(elements[i].innerHTML)}
       })
   }
 }
 closureWithDomElements();
+
+// demo how to use closure to correctly bind
+// right dom elements using let
+var closureWithDomElementsWithLet = function() {
+  var elements = document.getElementsByTagName('pre');
+  for (let i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', function() {
+        console.log(elements[i].innerHTML)
+      })
+  }
+}
+closureWithDomElementsWithLet();
+
+// more succint approach
+// https://codepen.io/bganguly/pen/MWdmEEw
+var closureWithDomElementsWithES6 = () => {
+  const elements = document.getElementsByTagName("pre");
+  Array.from(elements).forEach((elem) => {
+    elem.addEventListener("click", () => {
+      console.log(new Date().toString(), elem.innerHTML);
+    });
+  });
+};
+closureWithDomElementsWithES6();
