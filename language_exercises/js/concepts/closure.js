@@ -49,6 +49,7 @@ closureWithSetttimeoutCorrect();
 // CAUTION: these need to be run in chrome dev console or similar. 
 // Node runtime wont find `document`` (if run from vscode)
 if (typeof document === 'undefined') {
+  console.log('skipping several function call that rely on `document` being available in scope')
   return
 }
 // demo how to use closure to correctly bind
