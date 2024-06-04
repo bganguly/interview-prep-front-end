@@ -33,7 +33,7 @@ console.log('using Reduce :', outputUsingReduce)
 console.log()
 
 // demo calling Math.min on an array object 
-// (Math.min/max take an enumerated list or multiple args. passing an array ref will nt work)
+// (Math.min/max take an enumerated list or multiple args. passing an array ref will not work)
 const outputArrayMin1 = Math.min.apply(null,inputArray)
 const outputArrayMin2 = Math.min.call(null,...inputArray)
 const outputArrayMin3 = Math.min(...inputArray)
