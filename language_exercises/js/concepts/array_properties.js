@@ -1,5 +1,5 @@
 /*
-array for each/map/filter/reduce/Min
+demo array forEach/map/filter/reduce/Min
 */
 
 const inputArray = [-3,-2,-1,0,1,2,3]
@@ -34,9 +34,10 @@ console.log()
 
 // demo calling Math.min on an array object 
 // (Math.min/max take an enumerated list or multiple args. passing an array ref will not work)
-const outputArrayMin1 = Math.min.apply(null,inputArray)
-const outputArrayMin2 = Math.min.call(null,...inputArray)
-const outputArrayMin3 = Math.min(...inputArray)
 // below will return NaN
-const outputArrayMin4 = Math.min(inputArray)
+const outputArrayMin1 = Math.min(inputArray)
+// (Math.min/max - for an array- other ways)
+const outputArrayMin2 = Math.min(...inputArray)
+const outputArrayMin3 = Math.min.apply(null,inputArray)
+const outputArrayMin4 = Math.min.call(null,...inputArray)
 console.log('using Min :', outputArrayMin1, outputArrayMin2, outputArrayMin3, outputArrayMin4)
