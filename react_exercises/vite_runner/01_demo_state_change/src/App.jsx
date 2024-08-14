@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
   return (
     // usage - uncomment one component at a time
-    //  may have to refresh browser as setTieouts aren't getting cleared
+    //  may have to refresh browser as setTimeouts aren't always getting cleared
     <>
       {/* <Demo_01_basics_01 /> */}
       {/* <Demo_01_basics_02 /> */}
