@@ -42,3 +42,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.date-time-string {
+  font-family: monospace;
+  margin-top: 30px
+}
